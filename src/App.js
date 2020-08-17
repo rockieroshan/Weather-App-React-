@@ -13,7 +13,9 @@ function App() {
         key: '726b9bfbecb053bc746c73750563b55c',
         base: 'https://api.openweathermap.org/data/2.5/',
       };
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+      fetch(
+        `${api.base}weather?q=${query.trim()}&units=metric&APPID=${api.key}`
+      )
         .then((resp) => resp.json()) // Transform the data into json
         .then(function (data) {
           console.log(data);
